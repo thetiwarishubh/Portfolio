@@ -26,6 +26,12 @@ function App() {
   const skillRefs = useRef([]);
 
   useEffect(() => {
+    // Check user's preferred color scheme
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(prefersDark);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
@@ -36,8 +42,10 @@ function App() {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
 
@@ -112,6 +120,18 @@ function App() {
     }
   };
 
+  const handleHireMe = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    if (open) setOpen(false);
+  };
+
+  const refresh = () => {
+    window.scrollTo({top : 0, behavior : 'smooth'});
+    setTimeout(()=> {
+      window.location.reload()
+    }, 700)
+  }
+
   // Sample projects data
   const projects = [
     {
@@ -156,8 +176,12 @@ function App() {
   // Skills data
   const skills = [
     { name: "HTML/CSS", level: 90 },
+    { name: "Bootstrap", level: 90 },
+    { name: "Tailwind CSS", level: 90 },
     { name: "JavaScript", level: 85 },
     { name: "React", level: 80 },
+    { name: "NextJS", level: 80 },
+    { name: "Express", level: 80 },
     { name: "Node.js", level: 75 },
     { name: "MongoDB", level: 70 },
     { name: "UI/UX Design", level: 65 },
@@ -180,6 +204,18 @@ function App() {
             transform: translateY(-5px);
             transition: transform 0.3s ease;
           }
+
+          /* Improved focus styles for accessibility */
+          button:focus-visible,
+          a:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+          }
+
+          /* Better contrast for dark mode */
+          .dark .text-blue-400 {
+            color: #60a5fa;
+          }
         `}
       </style>
 
@@ -190,7 +226,7 @@ function App() {
       >
         <nav className="flex justify-between items-center transition duration-300 h-12 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           {/* Logo */}
-          <h1 className="text-xl font-bold cursor-pointer text-gray-900 dark:text-white">
+          <h1 onClick={refresh} className="text-xl font-bold cursor-pointer text-gray-900 dark:text-white">
             Shubham
           </h1>
 
@@ -214,11 +250,14 @@ function App() {
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
-                aria-label="Toggle dark mode"
+                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {darkMode ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200 shadow-sm cursor-pointer">
+              <button 
+                onClick={handleHireMe}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200 shadow-sm cursor-pointer"
+              >
                 Hire Me
               </button>
             </div>
@@ -229,7 +268,7 @@ function App() {
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
-              aria-label="Toggle dark mode"
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
@@ -265,7 +304,10 @@ function App() {
             <li className="w-full px-4 pt-2">
               <button
                 className="w-full px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200 cursor-pointer"
-                onClick={toggleMenu}
+                onClick={() => {
+                  handleHireMe();
+                  toggleMenu();
+                }}
               >
                 Hire Me
               </button>
@@ -274,20 +316,20 @@ function App() {
         </div>
       </header>
 
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen pt-16 bg-white dark:bg-gray-900">
         {/* Hero Section */}
-        <section id="home">
+        <section id="home" className="container mx-auto">
           <div className="flex flex-col lg:flex-row">
             {/* Text Content */}
             <div className="flex-1 items-center py-12 px-6 md:px-12 lg:px-16 flex flex-col justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
               <div className="max-w-lg">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 dark:text-white">
                   Hi, I'm{" "}
                   <span className="text-blue-600 dark:text-blue-400">
                     Shubham Tiwari
                   </span>
                 </h1>
-                <p className="py-6 text-lg md:text-xl text-gray-600 dark:text-gray-300">
+                <p className="py-6 text-lg md:text-xl text-gray-700 dark:text-gray-300">
                   Full Stack Developer specializing in building performant,
                   accessible web applications with modern technologies. I create
                   digital experiences that users love.
@@ -345,6 +387,7 @@ function App() {
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
                   src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Shubham Tiwari - Full Stack Developer"
+                  loading="lazy"
                 />
 
                 {/* Experience badge */}
@@ -366,8 +409,8 @@ function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 bg-white dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" className="py-16 bg-white dark:bg-gray-900 container mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                 About Me
@@ -393,20 +436,23 @@ function App() {
                 </p>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://github.com/yourusername"
                     className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                    aria-label="GitHub profile"
                   >
                     <Github size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="https://linkedin.com/in/yourusername"
                     className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                    aria-label="LinkedIn profile"
                   >
                     <Linkedin size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="mailto:shubham@example.com"
                     className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                    aria-label="Send email"
                   >
                     <Mail size={20} />
                   </a>
@@ -452,8 +498,8 @@ function App() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-16 bg-gray-50 dark:bg-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="portfolio" className="py-16 bg-gray-50 dark:bg-gray-800 container mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                 My Portfolio
@@ -477,6 +523,7 @@ function App() {
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-6">
@@ -507,8 +554,8 @@ function App() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 bg-white dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="skills" className="py-16 bg-white dark:bg-gray-900 container mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                 My Skills
@@ -548,8 +595,8 @@ function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 bg-white dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-16 bg-white dark:bg-gray-900 container mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
                 Get In Touch
@@ -589,7 +636,7 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <a
-                      href="#"
+                      href="https://linkedin.com/in/yourusername"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
                       linkedin.com/in/shubham
@@ -601,10 +648,10 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <a
-                      href="#"
+                      href="https://twitter.com/yourusername"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
-                      Twitter.com/shubham
+                      twitter.com/shubham
                     </a>
                   </div>
                   <div className="flex items-center">
@@ -613,7 +660,7 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <a
-                      href="#"
+                      href="https://github.com/yourusername"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
                       github.com/shubham
@@ -754,6 +801,7 @@ function App() {
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="absolute top-4 right-4 p-2 bg-white dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:text-red-500 transition-colors"
+                  aria-label="Close project details"
                 >
                   <X size={24} />
                 </button>
@@ -821,26 +869,30 @@ function App() {
 
             <div className="flex justify-center gap-6 mb-8">
               <a
-                href="#"
+                href="https://github.com/yourusername"
                 className="text-gray-400 hover:text-white transition-colors"
+                aria-label="GitHub"
               >
                 <Github size={24} />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/in/yourusername"
                 className="text-gray-400 hover:text-white transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="#"
+                href="mailto:shubham@example.com"
                 className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Email"
               >
                 <Mail size={24} />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/yourusername"
                 className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Twitter"
               >
                 <Twitter size={24} />
               </a>
