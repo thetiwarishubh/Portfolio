@@ -436,7 +436,7 @@ function App() {
                 </p>
                 <div className="flex gap-4">
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/thetiwarishubh"
                     className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
                     aria-label="GitHub profile"
                   >
@@ -660,7 +660,7 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <a
-                      href="https://github.com/yourusername"
+                      href="https://github.com/thetiwarishubh"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
                       github.com/shubham
