@@ -434,29 +434,6 @@ function App() {
                   design, ensuring that the applications I build are not only
                   functional but also provide an exceptional user experience.
                 </p>
-                <div className="flex gap-4">
-                  <a
-                    href="https://github.com/thetiwarishubh"
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
-                    aria-label="GitHub profile"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/yourusername"
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
-                    aria-label="LinkedIn profile"
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                  <a
-                    href="mailto:shubham@example.com"
-                    className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
-                    aria-label="Send email"
-                  >
-                    <Mail size={20} />
-                  </a>
-                </div>
               </div>
 
               <div className="lg:w-1/2 grid grid-cols-2 gap-4">
@@ -627,7 +604,7 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <span className="text-gray-700 dark:text-gray-300">
-                      shubham@example.com
+                      Email
                     </span>
                   </div>
                   <div className="flex items-center">
@@ -636,10 +613,10 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <a
-                      href="https://linkedin.com/in/yourusername"
+                      href="https://linkedin.com/in/thetiwarishubh"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
-                      linkedin.com/in/shubham
+                      LinkedIn
                     </a>
                   </div>
                   <div className="flex items-center">
@@ -648,10 +625,10 @@ function App() {
                       className="text-blue-600 dark:text-blue-400 mr-4"
                     />
                     <a
-                      href="https://twitter.com/yourusername"
+                      href="https://twitter.com/Thetiwarishubh"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
-                      twitter.com/shubham
+                      Twitter
                     </a>
                   </div>
                   <div className="flex items-center">
@@ -663,7 +640,7 @@ function App() {
                       href="https://github.com/thetiwarishubh"
                       className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                     >
-                      github.com/shubham
+                      GitHub
                     </a>
                   </div>
                 </div>
@@ -869,14 +846,14 @@ function App() {
 
             <div className="flex justify-center gap-6 mb-8">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/thetiwarishubh"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/thetiwarishubh"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
@@ -890,7 +867,7 @@ function App() {
                 <Mail size={24} />
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://twitter.com/Thetiwarishubh"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Twitter"
               >
