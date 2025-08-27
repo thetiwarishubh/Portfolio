@@ -182,9 +182,9 @@ function App() {
     { name: "React", level: 80 },
     { name: "NextJS", level: 80 },
     { name: "Express", level: 80 },
-    { name: "Node.js", level: 75 },
-    { name: "MongoDB", level: 70 },
-    { name: "UI/UX Design", level: 65 },
+    { name: "Node.js", level: 85 },
+    { name: "MongoDB", level: 75 },
+    { name: "UI/UX Design", level: 85 },
   ];
 
   return (
