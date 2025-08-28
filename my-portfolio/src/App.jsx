@@ -777,7 +777,7 @@ function App() {
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 p-2 bg-white dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:text-red-500 transition-colors"
+                  className="absolute top-4 right-4 p-2 bg-white dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:text-red-500 transition-colors cursor-pointer"
                   aria-label="Close project details"
                 >
                   <X size={24} />
