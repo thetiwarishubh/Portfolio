@@ -101,8 +101,6 @@ function App() {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
-      // Here you would typically connect to an email service
-      console.log("Form submitted:", formData);
       setFormSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setFormSubmitted(false), 5000);
@@ -190,6 +188,7 @@ function App() {
   return (
     <>
       <style>
+
         {`
           @keyframes skill-bar {
             from { width: 0%; }
@@ -217,6 +216,7 @@ function App() {
             color: #60a5fa;
           }
         `}
+        
       </style>
 
       <header
