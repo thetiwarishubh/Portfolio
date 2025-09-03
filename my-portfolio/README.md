@@ -10,15 +10,3 @@ A modern, responsive portfolio website built with React and Vite, showcasing my 
 - **Project Showcase**: Dedicated section to highlight my work
 - **Contact Form**: Easy way for potential clients/employers to reach out
 
-## 🛠️ Built With
-
-- [React](https://reactjs.org/) - Frontend library
-- [Vite](https://vitejs.dev/) - Build tool and development server
-- [JavaScript/JSX] - Programming language
-- [CSS3] - Styling with modern features
-
-## 📦 Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/portfolio.git
