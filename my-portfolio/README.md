@@ -1,12 +1,24 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React and Vite, showcasing my skills, projects, and professional experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Design**: Clean and professional UI with smooth animations
+- **Responsive Layout**: Optimized for all device sizes
+- **Performance Optimized**: Fast loading with Vite's build tools
+- **Project Showcase**: Dedicated section to highlight my work
+- **Contact Form**: Easy way for potential clients/employers to reach out
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/) - Frontend library
+- [Vite](https://vitejs.dev/) - Build tool and development server
+- [JavaScript/JSX] - Programming language
+- [CSS3] - Styling with modern features
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/portfolio.git
