@@ -177,12 +177,12 @@ function App() {
     { name: "Bootstrap", level: 90 },
     { name: "Tailwind CSS", level: 90 },
     { name: "JavaScript", level: 85 },
+    { name: "TypeScript", level: 85 },
     { name: "React", level: 80 },
     { name: "NextJS", level: 80 },
     { name: "Express", level: 80 },
     { name: "Node.js", level: 85 },
     { name: "MongoDB", level: 75 },
-    { name: "UI/UX Design", level: 85 },
   ];
 
   return (
