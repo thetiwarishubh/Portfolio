@@ -385,7 +385,7 @@ function App() {
                 <div className="absolute -inset-4 bg-blue-600/10 dark:bg-blue-400/10 rounded-2xl rotate-3"></div>
                 <img
                   className="relative rounded-2xl shadow-2xl w-full h-auto"
-                  src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="./Profile-Pic.JPG"
                   alt="Shubham Tiwari - Full Stack Developer"
                   loading="lazy"
                 />
