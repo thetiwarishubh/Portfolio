@@ -1,3 +1,5 @@
+// Dark mode is temporarily disabled
+
 import { useState, useEffect, useRef } from "react";
 import {
   Menu,
@@ -226,7 +228,7 @@ function App() {
       >
         <nav className="flex justify-between items-center transition duration-300 h-12 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           {/* Logo */}
-          <h1 onClick={refresh} className="text-xl font-bold cursor-pointer text-gray-900 dark:text-white">
+          <h1 onClick={refresh} className="text-xl lg:text-3xl font-bold cursor-pointer text-gray-900 dark:text-white">
             Shubham
           </h1>
 
@@ -247,13 +249,13 @@ function App() {
               )}
             </ul>
             <div className="flex items-center gap-4">
-              <button
+              {/* <button
                 onClick={() => setDarkMode(!darkMode)}
                 className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
               >
                 {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+              </button> */}
               <button 
                 onClick={handleHireMe}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200 shadow-sm cursor-pointer"
@@ -265,13 +267,13 @@ function App() {
 
           {/* Hamburger Menu for Mobile */}
           <div className="flex items-center gap-4 md:hidden">
-            <button
+            {/* <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            </button> */}
             <button
               className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
               onClick={toggleMenu}
