@@ -175,7 +175,7 @@ function App() {
 
   // Skills data
   const skills = [
-    { name: "HTML/CSS"},
+    { name: "HTML/CSS", level: 90 },
     { name: "Bootstrap", level: 90 },
     { name: "Tailwind CSS", level: 90 },
     { name: "JavaScript", level: 85 },
@@ -189,7 +189,7 @@ function App() {
 
   return (
     <>
-      
+    
 
       <header
         className={`fixed top-0 left-0 w-full bg-white dark:bg-gray-900 z-50 transition-all duration-300 ${
@@ -530,13 +530,13 @@ function App() {
                       {/* {skill.level}% */}
                     </span>
                   </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  {/* <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <div
                       ref={(el) => (skillRefs.current[index] = el)}
                       className="bg-blue-600 h-2.5 rounded-full"
                       // style={{ "--skill-level": `${skill.level}%` }}
                     ></div>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
