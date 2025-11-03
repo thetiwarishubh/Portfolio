@@ -192,10 +192,10 @@ function App() {
       <style>
 
         {`
-          @keyframes skill-bar {
-            from { width: 0%; }
-            to { width: var(--skill-level); }
-          }
+          // @keyframes skill-bar {
+          //   from { width: 0%; }
+          //   to { width: var(--skill-level); }
+          // }
           
           .animate-skill-bar {
             animation: skill-bar 1.5s ease-out forwards;
@@ -557,14 +557,14 @@ function App() {
                       {skill.name}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {skill.level}%
+                      {/* {skill.level}% */}
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <div
                       ref={(el) => (skillRefs.current[index] = el)}
                       className="bg-blue-600 h-2.5 rounded-full"
-                      style={{ "--skill-level": `${skill.level}%` }}
+                      // style={{ "--skill-level": `${skill.level}%` }}
                     ></div>
                   </div>
                 </div>
