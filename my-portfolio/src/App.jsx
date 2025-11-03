@@ -188,8 +188,38 @@ function App() {
   ];
 
   return (
-    <>
-    
+    <>  
+      <style>
+
+        {`
+          @keyframes skill-bar {
+            from { width: 0%; }
+            to { width: var(--skill-level); }
+          }
+          
+          .animate-skill-bar {
+            animation: skill-bar 1.5s ease-out forwards;
+          }
+          
+          .project-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+          }
+
+          /* Improved focus styles for accessibility */
+          button:focus-visible,
+          a:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+          }
+
+          /* Better contrast for dark mode */
+          .dark .text-blue-400 {
+            color: #60a5fa;
+          }
+        `}
+        
+      </style>
 
       <header
         className={`fixed top-0 left-0 w-full bg-white dark:bg-gray-900 z-50 transition-all duration-300 ${
@@ -527,16 +557,16 @@ function App() {
                       {skill.name}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {/* {skill.level}% */}
+                      {skill.level}%
                     </span>
                   </div>
-                  {/* <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <div
                       ref={(el) => (skillRefs.current[index] = el)}
                       className="bg-blue-600 h-2.5 rounded-full"
-                      // style={{ "--skill-level": `${skill.level}%` }}
+                      style={{ "--skill-level": `${skill.level}%` }}
                     ></div>
-                  </div> */}
+                  </div>
                 </div>
               ))}
             </div>
