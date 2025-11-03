@@ -175,7 +175,7 @@ function App() {
 
   // Skills data
   const skills = [
-    { name: "HTML/CSS", level: 90 },
+    { name: "HTML/CSS"},
     { name: "Bootstrap", level: 90 },
     { name: "Tailwind CSS", level: 90 },
     { name: "JavaScript", level: 85 },
