@@ -556,9 +556,6 @@ function App() {
                     <span className="font-medium text-gray-900 dark:text-white">
                       {skill.name}
                     </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {skill.level}%
-                    </span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <div
