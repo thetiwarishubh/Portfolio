@@ -13,6 +13,8 @@ import {
   Moon,
 } from "lucide-react";
 
+import photography from "./assets/dsphotography.png"
+
 function App() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -139,13 +141,13 @@ function App() {
       title: "E-Commerce Platform",
       description:
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      tags: ["React", "Tailwind"],
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        photography,
       details:
         "A complete e-commerce solution with user authentication, product catalog, shopping cart, and payment processing. Implemented responsive design and optimized for performance.",
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://dsphotography-pi.vercel.app/",
+      githubUrl: "https://github.com/thetiwarishubh/photography-portfolio",
     },
     {
       id: 2,
