@@ -13,7 +13,7 @@ import {
   Moon,
 } from "lucide-react";
 
-import photography from "./assets/dsphotography.png"
+import photography from "./assets/dsphotography.png";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -31,7 +31,9 @@ function App() {
 
   useEffect(() => {
     // Check user's preferred color scheme
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     setDarkMode(prefersDark);
   }, []);
 
@@ -46,10 +48,10 @@ function App() {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
-      localStorage.setItem('theme', 'dark');
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem('theme', 'light');
+      localStorage.setItem("theme", "light");
     }
   }, [darkMode]);
 
@@ -123,16 +125,16 @@ function App() {
   };
 
   const handleHireMe = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
     if (open) setOpen(false);
   };
 
   const refresh = () => {
-    window.scrollTo({top : 0, behavior : 'smooth'});
-    setTimeout(()=> {
-      window.location.reload()
-    }, 700)
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      window.location.reload();
+    }, 700);
+  };
 
   // Sample projects data
   const projects = [
@@ -142,8 +144,7 @@ function App() {
       description:
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tags: ["React", "Tailwind"],
-      image:
-        photography,
+      image: photography,
       details:
         "A complete e-commerce solution with user authentication, product catalog, shopping cart, and payment processing. Implemented responsive design and optimized for performance.",
       liveUrl: "https://dsphotography-pi.vercel.app/",
@@ -177,32 +178,22 @@ function App() {
 
   // Skills data
   const skills = [
-    { name: "HTML/CSS", level: 90 },
-    { name: "Bootstrap", level: 90 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "JavaScript", level: 85 },
-    { name: "TypeScript", level: 85 },
-    { name: "React", level: 80 },
-    { name: "NextJS", level: 80 },
-    { name: "Express", level: 80 },
-    { name: "Node.js", level: 85 },
-    { name: "MongoDB", level: 75 },
+    { name: "HTML/CSS" },
+    { name: "Bootstrap" },
+    { name: "Tailwind CSS" },
+    { name: "JavaScript" },
+    { name: "TypeScript" },
+    { name: "React" },
+    { name: "NextJS" },
+    { name: "Express" },
+    { name: "Node.js" },
+    { name: "MongoDB" },
   ];
 
   return (
-    <>  
+    <>
       <style>
-
         {`
-          @keyframes skill-bar {
-            from { width: 0%; }
-            to { width: var(--skill-level); }
-          }
-          
-          .animate-skill-bar {
-            animation: skill-bar 1.5s ease-out forwards;
-          }
-          
           .project-card:hover {
             transform: translateY(-5px);
             transition: transform 0.3s ease;
@@ -220,7 +211,6 @@ function App() {
             color: #60a5fa;
           }
         `}
-        
       </style>
 
       <header
@@ -230,7 +220,10 @@ function App() {
       >
         <nav className="flex justify-between items-center transition duration-300 h-12 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
           {/* Logo */}
-          <h1 onClick={refresh} className="text-xl lg:text-3xl font-bold cursor-pointer text-gray-900 dark:text-white">
+          <h1
+            onClick={refresh}
+            className="text-xl lg:text-3xl font-bold cursor-pointer text-gray-900 dark:text-white"
+          >
             Shubham
           </h1>
 
@@ -258,7 +251,7 @@ function App() {
               >
                 {darkMode ? <Sun size={20} /> : <Moon size={20} />}
               </button> */}
-              <button 
+              <button
                 onClick={handleHireMe}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200 shadow-sm cursor-pointer"
               >
@@ -413,7 +406,10 @@ function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 bg-white dark:bg-gray-900 container mx-auto">
+        <section
+          id="about"
+          className="py-16 bg-white dark:bg-gray-900 container mx-auto"
+        >
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
@@ -479,7 +475,10 @@ function App() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-16 bg-gray-50 dark:bg-gray-800 container mx-auto">
+        <section
+          id="portfolio"
+          className="py-16 bg-gray-50 dark:bg-gray-800 container mx-auto"
+        >
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
@@ -535,7 +534,10 @@ function App() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-16 bg-white dark:bg-gray-900 container mx-auto">
+        <section
+          id="skills"
+          className="py-16 bg-white dark:bg-gray-900 container mx-auto"
+        >
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
@@ -548,27 +550,15 @@ function App() {
               <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6 max-w-5xl mx-auto">
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg"
+                  className="w-full text-center bg-gray-50 dark:bg-gray-800 p-4 rounded-lg"
                 >
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium text-gray-900 dark:text-white">
-                      {skill.name}
-                    </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {skill.level}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                    <div
-                      ref={(el) => (skillRefs.current[index] = el)}
-                      className="bg-blue-600 h-2.5 rounded-full"
-                      style={{ "--skill-level": `${skill.level}%` }}
-                    ></div>
-                  </div>
+                  <span className="font-medium text-gray-900 dark:text-white">
+                    {skill.name}
+                  </span>
                 </div>
               ))}
             </div>
@@ -576,7 +566,10 @@ function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 bg-white dark:bg-gray-900 container mx-auto">
+        <section
+          id="contact"
+          className="py-16 bg-white dark:bg-gray-900 container mx-auto"
+        >
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
@@ -842,7 +835,9 @@ function App() {
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-xl md:text-2xl font-bold mb-4">Shubham Tiwari</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-4">
+              Shubham Tiwari
+            </h3>
             <p className="text-gray-400 max-w-2xl mx-auto mb-8">
               Full Stack Developer passionate about creating interactive,
               user-friendly web applications.
